@@ -1,0 +1,23 @@
+name: Push PR Workflow
+
+on:
+  push:
+      branches:
+          - main
+          - 'feature/**'
+
+  pull_request:
+      branches:
+          - main
+          - 'feature/**'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run tests
+        run: echo "Running tests..." # Replace with actual test command
